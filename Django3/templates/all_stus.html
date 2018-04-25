@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for stu in stus %}
+    {% ifequal forloop.counter 3 %}
+        <h1>姓名:{{ stu.stu_name }}</h1>
+    {% endifequal %}
+    姓名:{{ stu.stu_name }}
+     &nbsp;&nbsp;&nbsp;&nbsp;
+    性别:{% if stu.stu_sex %}
+     男
+    {% else %}
+    女
+    {% endif %}
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    年龄:{{ stu.stu_birth }}
+     &nbsp;&nbsp;&nbsp;&nbsp;
+    创建时间:{{ stu.stu_create_time }}
+     &nbsp;&nbsp;&nbsp;&nbsp;
+    语文成绩:{{ stu.stu_yuwen }}
+     &nbsp;&nbsp;&nbsp;&nbsp;
+    数学成绩:{{ stu.stu_shuxue }}
+    <br>
+    {% empty %}
+    没有学生信息
+{% endfor %}
+</body>
+</html>
